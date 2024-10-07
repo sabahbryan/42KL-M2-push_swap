@@ -6,13 +6,14 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:32 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/09/09 15:26:39 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/09/13 17:52:34 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
+// TO-DO: modify libft to include ft_printf
 
 typedef struct s_node {
     int             value;
@@ -51,3 +52,34 @@ void rrr(t_stack *a, t_stack *b);
 //MOVE COST CALCULATION
 
 #endif
+
+/*
+# include <stdbool.h>
+# include <limits.h>
+
+typedef struct s_stack_node
+{
+	int					nbr;
+	int					index;
+	int					push_cost;
+	bool				above_median;
+	bool				cheapest;
+	struct s_stack_node	*target_node;
+	struct s_stack_node	*next;
+	struct s_stack_node	*prev;
+	t_stack_node;
+}
+
+//Handle errors
+
+//Stack initiation
+
+//Nodes initiation
+
+//Stack utils
+
+//Commands
+
+//Algorithm
+
+*/
