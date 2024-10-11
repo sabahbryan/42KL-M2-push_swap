@@ -6,7 +6,7 @@
 #    By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/03/27 20:21:41 by bryaloo           #+#    #+#              #
-#    Updated: 2024/03/27 20:21:46 by bryaloo          ###   ########.fr        #
+#    Updated: 2024/10/11 22:01:16 by bryaloo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,6 +59,7 @@ SRCS	=	ft_isalnum.c \
 			ft_printf_utils_1.c \
 			ft_printf_utils_2.c \
 			ft_printf_utils_3.c \
+			get_next_line.c \
 
 OBJS	= ${addprefix objs/, ${SRCS:.c=.o}}
 
@@ -80,7 +81,7 @@ ${NAME}:	${OBJS}
 			${AR} $@ ${OBJS}
 
 clean:
-	${RM} ${OBJS}
+	${RM} ${OBJS} ${NAME}
 
 fclean:	clean
 	${RM} ${NAME}
