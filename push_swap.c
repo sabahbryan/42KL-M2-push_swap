@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:47 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/09/26 16:57:54 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/14 16:44:51 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,9 @@
 #include <unistd.h>
 
 /**
+ * @brief ?
  * @param void none
+ * @return ?
  */
 int	main(void)
 {
@@ -37,6 +39,7 @@ int	main(void)
     //      if 3 numbers, implement "sort-3" algorithm
 	//		if more than 3 numbers, implement [chosen] algorithm
 }
+// function description
 
 //MAIN
 /*

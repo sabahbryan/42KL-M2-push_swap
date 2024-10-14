@@ -6,48 +6,52 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:32 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/09/13 17:52:34 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/14 21:51:44 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
-// TO-DO: modify libft to include ft_printf
 
-typedef struct s_node {
-    int             value;
-    struct s_node   *next;
-} t_node;
+//STACK NODE STRUCT
+typedef struct s_node
+{
+	int				value;
+	struct s_node	*next;
+}	t_node;
 
-
-typedef struct s_stack {
-	t_node  *top;  // Pointer to the top of the stack
-    int     size;  // Number of elements in the stack
-} t_stack;
+//STACK STRUCT
+typedef struct s_stack
+{
+	t_node	*top;
+	int		size;
+}	t_stack;
+// *top: Pointer to the top of the stack
+// size: Number of elements in the stack
 
 //PUSH (ops_push.c)
-void push(t_stack *from, t_stack *to);
-void pa(t_stack *a, t_stack *b);
-void pb(t_stack *a, t_stack *b);
+void	push(t_stack *from, t_stack *to);
+void	pa(t_stack *a, t_stack *b);
+void	pb(t_stack *a, t_stack *b);
 
 //SWAP (ops_swap.c)
-void swap(t_stack *stack);
-void sa(t_stack *a);
-void sb(t_stack *b);
-void ss(t_stack *a, t_stack *b);
+void	swap(t_stack *stack);
+void	sa(t_stack *a);
+void	sb(t_stack *b);
+void	ss(t_stack *a, t_stack *b);
 
 //ROTATE (ops_rotate.c)
-void rotate(t_stack *stack);
-void ra(t_stack *a);
-void rb(t_stack *b);
-void rr(t_stack *a, t_stack *b);
+void	rotate(t_stack *stack);
+void	ra(t_stack *a);
+void	rb(t_stack *b);
+void	rr(t_stack *a, t_stack *b);
 
 //REVERSE ROTATE (ops_reverse.c)
-void reverse_rotate(t_stack *stack);
-void rra(t_stack *a);
-void rrb(t_stack *b);
-void rrr(t_stack *a, t_stack *b);
+void	reverse_rotate(t_stack *stack);
+void	rra(t_stack *a);
+void	rrb(t_stack *b);
+void	rrr(t_stack *a, t_stack *b);
 
 //MOVE COST CALCULATION
 

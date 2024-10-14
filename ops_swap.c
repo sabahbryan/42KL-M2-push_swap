@@ -6,40 +6,69 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:17 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/09/09 15:26:22 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/14 23:04:46 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
 //SWAP OPERATIONS
-//sa
-//sb
-//ss
 
-void swap(t_stack *stack) {
-    if (stack->size < 2) // No need to swap if the stack has less than two elements
-        return;
+/**
+ * @brief	?
+ * @param	*stack	?
+ * @return	?
+ */
+void	swap(t_stack *stack)
+{
+	t_node	*first;
+	t_node	*second;
 
-    t_node *first = stack->top;
-    t_node *second = first->next;
-
-    first->next = second->next;
-    second->next = first;
-    stack->top = second;
+	if (stack->size < 2)
+		return ;
+	first = stack->top;
+	second = first->next;
+	first->next = second->next;
+	second->next = first;
+	stack->top = second;
 }
+// No need to swap if the stack has less than two elements
+// function description
 
-void sa(t_stack *a) {
-    swap(a);
+/**
+ * @brief	Swaps the first 2 elements in 'a'
+ * @param	*a	?
+ * @return	None. Only modify structures of the stack
+ */
+void	sa(t_stack *a)
+{
+	swap(a);
+	ft_printf("sa\n");
 }
+// Prints "sa" in the terminal
 
-void sb(t_stack *b) {
-    swap(b);
+/**
+ * @brief	Swaps the first 2 elements in 'b'
+ * @param	*b	?
+ * @return	None. Only modify structures of the stack
+ */
+void	sb(t_stack *b)
+{
+	swap(b);
+	ft_printf("sb\n");
 }
+// Prints "sb" in the terminal
 
-void ss(t_stack *a, t_stack *b) {
-    swap(a);
-    swap(b);
+/**
+ * @brief	Performs "sa" and "sb" at the same time
+ * @param	*a	?
+ * @param	*b	?
+ * @return	None. Only modify structures of the stack
+ */
+void	ss(t_stack *a, t_stack *b)
+{
+	swap(a);
+	swap(b);
+	ft_printf("ss\n");
 }
+// Prints "ss" in the terminal

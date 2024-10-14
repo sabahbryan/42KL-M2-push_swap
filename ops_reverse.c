@@ -6,46 +6,78 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:02 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/09/09 15:26:07 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/14 23:14:13 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-
 
 #include "push_swap.h"
 
 //REVERSE ROTATE OPERATIONS
-//rra
-//rrb
-//rrr
 
-void reverse_rotate(t_stack *stack) {
-    if (stack->size < 2)  // No need to reverse rotate if less than two elements
-        return;
+/**
+ * @brief	?
+ * @param	*stack	?
+ * @return	?
+ */
+void	reverse_rotate(t_stack *stack)
+{
+	t_node	*prev;
+	t_node	*current;
 
-    t_node *prev = NULL;
-    t_node *current = stack->top;
-
-    while (current->next) {  // Traverse to the last node
-        prev = current;
-        current = current->next;
-    }
-
-    if (prev)
-        prev->next = NULL;   // Break the link to the last node
-    current->next = stack->top;  // Move the last node to the top
-    stack->top = current;  // Update the top
+	if (stack->size < 2)
+		return ;
+	prev = NULL;
+	current = stack->top;
+	while (current->next)
+	{
+		prev = current;
+		current = current->next;
+	}
+	if (prev)
+		prev->next = NULL;
+	current->next = stack->top;
+	stack->top = current;
 }
+// No need to reverse rotate if less than two elements
+// Traverse to the last node
+// Break the link to the last node
+// Move the last node to the top
+// Update the top
 
-void rra(t_stack *a) {
-    reverse_rotate(a);
+/**
+ * @brief	Shifts all elements down by 1 in 'a' and make the last element first
+ * @param	*a	?
+ * @return	None. Only modify structures of the stack
+ */
+void	rra(t_stack *a)
+{
+	reverse_rotate(a);
+	ft_printf("rra\n");
 }
+// Prints "rra" in the terminal
 
-void rrb(t_stack *b) {
-    reverse_rotate(b);
+/**
+ * @brief	Shifts all elements down by 1 in 'b' and make the last element first
+ * @param	*b	?
+ * @return	None. Only modify structures of the stack
+ */
+void	rrb(t_stack *b)
+{
+	reverse_rotate(b);
+	ft_printf("rrb\n");
 }
+// Prints "rrb" in the terminal
 
-void rrr(t_stack *a, t_stack *b) {
-    reverse_rotate(a);
-    reverse_rotate(b);
+/**
+ * @brief	Performs "rra" and "rrb" at the same time
+ * @param	*a	?
+ * @param	*b	?
+ * @return	None. Only modify structures of the stack
+ */
+void	rrr(t_stack *a, t_stack *b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	ft_printf("rrr\n");
 }
+// Prints "rrr" in the terminal
