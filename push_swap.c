@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:47 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/14 16:44:51 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/15 17:39:00 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -272,7 +272,11 @@ void	sort_three(t_stack_node **a)
 /
 void	sort_stacks(t_stack_node **a, t-stack_node **b)
 {
-	
+	int	 len_a;
+
+len_a = stack_len(*a);
+if (len_a-- > 3 && !stack_sorted(*a))
+	pb(b, a, false);
 }
 */
 

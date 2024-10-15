@@ -6,12 +6,13 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:27:01 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/14 22:05:28 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/15 17:29:06 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/*
 int	find_position_in_a(t_stack *a, int value)
 {
 	t_node *current = a->top;
@@ -115,4 +116,4 @@ int	find_min_cost_move(t_stack *a, t_stack *b) {
 
 	return min_cost_index; // Return the index of the optimal move in stack "b"
 }
-
+*/

@@ -6,49 +6,50 @@
 #    By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/05 16:50:17 by bryaloo           #+#    #+#              #
-#    Updated: 2024/09/05 16:50:19 by bryaloo          ###   ########.fr        #
+#    Updated: 2024/10/15 20:49:42 by bryaloo          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+# NAME
 NAME	= push_swap
 
+# SOURCE FILES
 SRCS 	=
 
-LIBFT_DIR = libft
+# LIBFT
+LIBFT_DIR	= libft
+LIBFT		= ${LIBFT_DIR}/libft.a
 
-LIBFT	= ${LIBFT_DIR}/libft.a
-
+# OBJECTS
 OBJS	=
 
+# INCLUDES
 INCLUDES	= -I ./ -I ${LIBFT_DIR}
 
-AR	= ar rcs
-
-RM	= rm -f
-
-GCC	= gcc
-
+# COMPILERS & FLAGS
+AR		= ar rcs
+RM		= rm -f
+GCC		= gcc
 CFLAGS	= -Wall -Werror -Wextra
 
+# MAKE & BUILD
 all: 
 bonus: 
 
 ${LIBFT}:
 	make -C ${LIBFT_DIR}
 
-#${CLIENT}: ${OBJS_CLIENT} ${LIBFT}
-#	${GCC} ${CFLAGS} ${OBJS_CLIENT} ${LIBFT} -o ${CLIENT}
-
 %.o: %.c
 	${GCC} ${CFLAGS} ${INCLUDES} -c $< -o $@
 
+# CLEANING
 clean:
 	${RM} 
-	make -C ${LIBFT_DIR} clean
+	make -C ${LIBFT_DIR} ${LIBFT} clean
 
 fclean:	clean
 	${RM} 
-	make -C ${LIBFT_DIR} clean
+	make -C ${LIBFT_DIR} ${LIBFT} clean
 
 re:	fclean all
 
