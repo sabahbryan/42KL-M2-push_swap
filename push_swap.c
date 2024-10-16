@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:47 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/15 17:39:00 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/16 22:44:17 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ int	main(void)
 // function description
 
 //MAIN
-/*
 int	main(int argc, char **argv)
 {
 	t_stack_node	*a;
@@ -67,10 +66,8 @@ int	main(int argc, char **argv)
 	free_stacks(&a);
 	return (0);
 }
-*/
 
 //SPLIT
-/*
 static	int	count_words(char *s, char c)
 {
 	int		count;
@@ -145,10 +142,8 @@ char	**split(char *s, char c)
 	result_array[i] = NULL;
 	return (result_array);
 }
-*/
 
 //INIT_STACK_A
-/*
 void	init_stack_a(t_stack_node **a, char **argv)
 {
 	long	n;
@@ -214,10 +209,8 @@ static	void	append_node(t_stack_node **stack, int n)
 		node->prev = last_node;
 	}
 }
-*/
 
 //STACK_SORTED
-/*
 bool	stack_sorted(t_stack_node *stack)
 {
 	if (!stack)
@@ -250,10 +243,8 @@ t_stack_node	*find_min(t_stack_node *stack)
 	}
 	return (min_node);
 }
-*/
 
 //SORT_3
-/*
 void	sort_three(t_stack_node **a)
 {
 	t_stack_node	*biggest_node;
@@ -266,19 +257,78 @@ void	sort_three(t_stack_node **a)
 	if ((*a)->nbr > (*a)->next->nbr)
 		sa(a, false);
 }
-*/
 
 //SORT_STACKS
-/
 void	sort_stacks(t_stack_node **a, t-stack_node **b)
 {
 	int	 len_a;
 
-len_a = stack_len(*a);
-if (len_a-- > 3 && !stack_sorted(*a))
-	pb(b, a, false);
+	len_a = stack_len(*a);
+	if (len_a-- > 3 && !stack_sorted(*a))
+		pb(b, a, false);
+	if (len_a-- > 3 && !stack_sorted(*a))
+		pb(b, a, false);
+	while (len_a-- > 3 !stack_sorted(*a))
+	{
+		init_nodes_a(*a, *b);
+		move_a_to_b(a, b);
+	}
+	sort_three(a);
+	while(*b)
+	{
+		init_nodes_a(*a, *b);
+		move_b_to_a(a, b);
+	}
+	current_index(*a);
+	min_on_top(a);
 }
-*/
+
+void	init_nodes_a(t_stack_node *a, t_stack_node *b)
+{
+	current_index(a);
+	current_index(b);
+	set_target_a(a, b);
+	cost_analysis(a, b);
+	set_cheapest(a);
+}
+
+void	current_index(t_stack_node *stack)
+{
+	int	i;
+	int	median;
+
+	i = 0;
+	if (!stack)
+		return ;
+	median = stack_len(stack) / 2;
+	while (stack)
+	{
+		stack->index = i;
+		if (i <= median)
+			stack->above_median = true;
+		else
+			stack->above_median = false;
+		stack = stack->next;
+		++i;
+	}
+}
+
+static	void	set_target_a(t_stack_node *a, t_stack_node *b)
+{
+	t_stack_node	*current_b;
+	t_stack_node	*target_node;
+	long			best_match_index;
+
+	while (a)
+	{
+		best_match_index = LONG_MIN;
+		current_b = b;
+		while (current_b)
+		{
+			if
+		}
+	}
+}
 
 //sudo apt install [valgrind]
 //valgrind --v
