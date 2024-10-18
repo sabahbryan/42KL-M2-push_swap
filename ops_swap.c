@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:17 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/14 23:04:46 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/18 19:41:02 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,11 @@
 //SWAP OPERATIONS
 
 /**
- * @brief	?
- * @param	*stack	?
- * @return	?
+ * @brief	swaps the top 2 nodes in the stack
+ * @param	stack	pointer to a stack data structure
+ * @var		first	highest node in the stack
+ * @var		second	second-highest node in the stack
+ * @return	none.
  */
 void	swap(t_stack *stack)
 {
@@ -32,7 +34,7 @@ void	swap(t_stack *stack)
 	second->next = first;
 	stack->top = second;
 }
-// No need to swap if the stack has less than two elements
+// No need to swap if the stack has less than two elements, returns void
 // function description
 
 /**
