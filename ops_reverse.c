@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:02 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/14 23:14:13 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/21 21:05:49 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,33 +46,31 @@ void	reverse_rotate(t_stack *stack)
 
 /**
  * @brief	Shifts all elements down by 1 in 'a' and make the last element first
- * @param	*a	?
- * @return	None. Only modify structures of the stack
+ * @param	*a	Pointer to stack 'a'
+ * @note	Prints "rra" in the terminal.
  */
 void	rra(t_stack *a)
 {
 	reverse_rotate(a);
 	ft_printf("rra\n");
 }
-// Prints "rra" in the terminal
 
 /**
  * @brief	Shifts all elements down by 1 in 'b' and make the last element first
- * @param	*b	?
- * @return	None. Only modify structures of the stack
+ * @param	*b	Pointer to stack 'b'
+ * @note	Prints "rrb" in the terminal.
  */
 void	rrb(t_stack *b)
 {
 	reverse_rotate(b);
 	ft_printf("rrb\n");
 }
-// Prints "rrb" in the terminal
 
 /**
  * @brief	Performs "rra" and "rrb" at the same time
- * @param	*a	?
- * @param	*b	?
- * @return	None. Only modify structures of the stack
+ * @param	*a	Pointer to stack 'a'
+ * @param	*b	Pointer to stack 'b'
+ * @note	Prints "rrr" in the terminal.
  */
 void	rrr(t_stack *a, t_stack *b)
 {
@@ -80,4 +78,3 @@ void	rrr(t_stack *a, t_stack *b)
 	reverse_rotate(b);
 	ft_printf("rrr\n");
 }
-// Prints "rrr" in the terminal

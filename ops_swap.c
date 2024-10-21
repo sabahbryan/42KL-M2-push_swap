@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:17 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/18 19:41:02 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/21 21:37:46 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,12 @@
 //SWAP OPERATIONS
 
 /**
- * @brief	swaps the top 2 nodes in the stack
+ * @brief	Swaps the top 2 nodes in the stack
  * @param	stack	pointer to a stack data structure
  * @var		first	highest node in the stack
  * @var		second	second-highest node in the stack
- * @return	none.
+ * @return	void.
+ * @note	notes here.
  */
 void	swap(t_stack *stack)
 {
@@ -35,37 +36,40 @@ void	swap(t_stack *stack)
 	stack->top = second;
 }
 // No need to swap if the stack has less than two elements, returns void
-// function description
+// Assigns *first to point to the first element of the stack
+// Assigns *second to point to the second element of the stack
+//		"first->next" is a pointer to the next node in the stack
+// Reassigns first *next to after second node
+// Reassigns second *next to the first node
+// Updates top pointer to second node
 
 /**
- * @brief	Swaps the first 2 elements in 'a'
- * @param	*a	?
- * @return	None. Only modify structures of the stack
+ * @brief	swaps the first 2 elements in 'a'
+ * @param	*a	pointer to stack 'a'
+ * @note	prints "sa" in the terminal.
  */
 void	sa(t_stack *a)
 {
 	swap(a);
 	ft_printf("sa\n");
 }
-// Prints "sa" in the terminal
 
 /**
- * @brief	Swaps the first 2 elements in 'b'
- * @param	*b	?
- * @return	None. Only modify structures of the stack
+ * @brief	swaps the first 2 elements in 'b'
+ * @param	*b pointer to stack 'b'
+ * @note	prints "sb" in the terminal.
  */
 void	sb(t_stack *b)
 {
 	swap(b);
 	ft_printf("sb\n");
 }
-// Prints "sb" in the terminal
 
 /**
- * @brief	Performs "sa" and "sb" at the same time
- * @param	*a	?
- * @param	*b	?
- * @return	None. Only modify structures of the stack
+ * @brief	performs "sa" and "sb" at the same time
+ * @param	*a	pointer to stack 'a'
+ * @param	*b	pointer to stack 'b'
+ * @note	prints "ss" in the terminal.
  */
 void	ss(t_stack *a, t_stack *b)
 {
@@ -73,4 +77,3 @@ void	ss(t_stack *a, t_stack *b)
 	swap(b);
 	ft_printf("ss\n");
 }
-// Prints "ss" in the terminal
