@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:25:40 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/21 21:05:44 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/22 22:33:14 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,9 @@
 
 /**
  * @brief	?
- * @param	*a	?
- * @param	*b	?
- * @var		?
+ * @param	*from	?
+ * @param	*to		?
+ * @var		temp	?
  * @return	?
  * @note Note here. 
  */

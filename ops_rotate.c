@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:11 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/21 21:03:47 by bryaloo          ###   ########.fr       */
+/*   Updated: 2024/10/22 22:33:29 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@
 
 /**
  * @brief	?
- * @param	*stack	?
- * @return	?
+ * @param	*stack	pointer to a stack data structure
+ * @var		first	highest node in the stack
+ * @var		current	?
+ * @return	void.
+ * @note	notes here.
  */
 void	rotate(t_stack *stack)
 {
