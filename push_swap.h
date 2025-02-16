@@ -6,13 +6,14 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:32 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/14 21:51:44 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/14 17:50:12 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
+# include <unistd.h>
 
 //STACK NODE STRUCT
 typedef struct s_node
