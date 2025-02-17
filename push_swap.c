@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
+/*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:47 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/02/16 18:26:48 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/17 21:16:33 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ void	small_sort(t_stack *a, t_stack *b)
 			sa(a);
 		return ;
 	}
-	if (a->size == 3)
+	else if (a->size == 3)
 		sort_three(a);
-	else
+	else if (a->size <= 5)
 		sort_five(a, b);
 }
 

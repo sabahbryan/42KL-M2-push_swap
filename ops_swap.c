@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ops_swap.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
+/*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:17 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/02/16 17:13:17 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/17 20:44:34 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,15 @@
 
 /**
  * @brief	Swaps the top 2 nodes in the stack
- * @param	stack	pointer to a stack data structure
+ * @param	stack	 pointer to a stack data structure
  * @var		first	highest node in the stack
  * @var		second	second-highest node in the stack
- * @return	void.
- * @note	notes here.
+ * @return	if there is less than 2 elements in stack
+ * @note	1) edge case: if less than 2 elements, return
+ * @note	2) assign top node to first, second node to first's next
+ * @note	3) reassign first's next to second's next
+ * @note	4) reassign second's next to first, makes second the new top
+ * @note	5) update top node to second
  */
 void	swap(t_stack *stack)
 {
