@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/27 20:22:08 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/11 21:49:56 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/16 21:24:18 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,9 +100,9 @@ void		put_str(char *str);
 //GET_NEXT_LINE//
 char		*get_next_line(int fd);
 // Helper functions*
-static int	read_and_concat(int fd, char **remain, char *buffer);
-static char	*extract_line(char **remain);
-static char	*handle_remain(char **remain, char *line);
-static char	*read_line(int fd, char **remain, char *buffer);
+// static int	read_and_concat(int fd, char **remain, char *buffer);
+// static char	*extract_line(char **remain);
+// static char	*handle_remain(char **remain, char *line);
+// static char	*read_line(int fd, char **remain, char *buffer);
 
 #endif

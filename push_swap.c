@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:47 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/02/16 16:54:52 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/16 18:26:48 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  */
 int	is_sorted(t_stack *stack)
 {
-	t_node *current;
+	t_node	*current;
 
 	current = stack->top;
 	while (current && current->next)
@@ -47,7 +47,7 @@ void	small_sort(t_stack *a, t_stack *b)
 	{
 		if (a->top->value > a->top->next->value)
 			sa(a);
-		return;
+		return ;
 	}
 	if (a->size == 3)
 		sort_three(a);
@@ -83,20 +83,16 @@ void	radix_sort(t_stack *a, t_stack *b)
 
 	if (is_sorted(a))
 		return ;
-
 	if (a->size <= 5)
 	{
 		small_sort(a, b);
-		return;
+		return ;
 	}
-
 	size = a->size;
 	max_bits = 0;
 	i = 0;
-
 	while ((size - 1) >> max_bits)
 		max_bits++;
-
 	while (i < max_bits)
 	{
 		j = 0;
@@ -112,7 +108,7 @@ void	radix_sort(t_stack *a, t_stack *b)
 		while (b->size > 0)
 			pa(b, a);
 		if (is_sorted(a))
-			return;
+			return ;
 		i++;
 	}
 }
@@ -171,21 +167,19 @@ void	radix_sort(t_stack *a, t_stack *b)
  */
 int	main(int argc, char **argv)
 {
-	t_stack *a;
-	t_stack *b;
+	t_stack	*a;
+	t_stack	*b;
 
 	if (argc < 2)
-		return (0);  // No numbers to sort
-
+		return (0);
 	a = init_stack();
 	b = init_stack();
 	if (!a || !b)
-		return (1);  // Memory allocation failed
-
+		return (1);
 	init_stack_a(a, argv);
-
-	// Call sorting function here
 	radix_sort(a, b);
-
 	return (0);
 }
+// No numbers to sort
+// Memory allocation failed
+// Call sorting function here

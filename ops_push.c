@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:25:40 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/22 22:33:14 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/16 22:50:27 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 //PUSH OPERATIONS
 
 /**
- * @brief	?
- * @param	*from	?
- * @param	*to		?
- * @var		temp	?
- * @return	?
- * @note Note here. 
+ * @brief	Pushes the top node from source to destination
+ * @param	*from	 source stack to push node from
+ * @param	*to		 destination stack to push node to
+ * @var		temp	pointer to temporarily store node to be pushed
+ * @return	 returns if nothing to push, prevents SEGFAULT
+ * @note	1) edge case: if source stack is empty, return
+ * @note	2) assign top node of source stack to temp
+ * @note	3) move top node of source stack to next node
+ * 
  */
 void	push(t_stack *from, t_stack *to)
 {

@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 22:39:22 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/02/16 16:22:17 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/16 17:57:18 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
  */
 t_stack	*init_stack(void)
 {
-	t_stack *stack;
+	t_stack	*stack;
 
 	stack = (t_stack *)malloc(sizeof(t_stack));
 	if (!stack)
@@ -40,7 +40,7 @@ t_stack	*init_stack(void)
  */
 void	push_to_stack(t_stack *stack, int value)
 {
-	t_node *new_node;
+	t_node	*new_node;
 
 	new_node = (t_node *)malloc(sizeof(t_node));
 	if (!new_node)
@@ -66,8 +66,9 @@ void	init_stack_a(t_stack *a, char **argv)
 	i = 1;
 	while (argv[i])
 	{
-		value = atoi(argv[i]);  // Convert input to integer
+		value = atoi(argv[i]);
 		push_to_stack(a, value);
 		i++;
 	}
 }
+// Convert input to integer
