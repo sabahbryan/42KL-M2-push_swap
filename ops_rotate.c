@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ops_rotate.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
+/*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:11 by bryaloo           #+#    #+#             */
-/*   Updated: 2024/10/22 22:33:29 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/17 18:33:34 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 //ROTATE OPERATIONS
 
 /**
- * @brief	?
- * @param	*stack	pointer to a stack data structure
- * @var		first	highest node in the stack
- * @var		current	?
- * @return	void.
- * @note	notes here.
+ * @brief	Shifts first node to the bottom of stack
+ * @param	*stack	 pointer to a stack data structure
+ * @var		first	pointer to highest node in the stack
+ * @var		current	pointer to find the last node
+ * @return	if there is less than 2 elements in stack
+ * @note	1)
  */
 void	rotate(t_stack *stack)
 {

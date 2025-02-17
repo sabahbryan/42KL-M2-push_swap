@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
+/*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:32 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/02/16 21:22:03 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/17 18:05:45 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	pre_sort_to_b(t_stack *a, t_stack *b, int total_elements, int grp_size);
 //***OPERATIONS***
 
 //PUSH (ops_push.c)
-void	push(t_stack *from, t_stack *to);
+void	push(t_stack *src, t_stack *dest);
 void	pa(t_stack *a, t_stack *b);
 void	pb(t_stack *a, t_stack *b);
 //SWAP (ops_swap.c)

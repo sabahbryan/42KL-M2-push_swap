@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ops_push.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bryaloo <bryaloo@student.42kl.edu.my>      +#+  +:+       +#+        */
+/*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:25:40 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/02/16 22:50:27 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/02/17 18:19:24 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,30 @@
 //PUSH OPERATIONS
 
 /**
- * @brief	Pushes the top node from source to destination
- * @param	*from	 source stack to push node from
- * @param	*to		 destination stack to push node to
+ * @brief	Pushes the top node from source stack to destination stack
+ * @param	*src	 source stack to push node from
+ * @param	*dest	 destination stack to push node to
  * @var		temp	pointer to temporarily store node to be pushed
- * @return	 returns if nothing to push, prevents SEGFAULT
+ * @return	if nothing to push, prevents SEGFAULT
  * @note	1) edge case: if source stack is empty, return
  * @note	2) assign top node of source stack to temp
  * @note	3) move top node of source stack to next node
- * 
+ * @note	4) assign top node of destination stack to next node of temp
+ * @note	5) assign temp to top node of destination stack
+ * @note	6) decrement source stack size, increment destination stack size
  */
-void	push(t_stack *from, t_stack *to)
+void	push(t_stack *src, t_stack *dest)
 {
 	t_node	*temp;
 
-	if (from->size == 0)
+	if (src->size == 0)
 		return ;
-	temp = from->top;
-	from->top = from->top->next;
-	temp->next = to->top;
-	to->top = temp;
-	from->size--;
-	to->size++;
+	temp = src->top;
+	src->top = src->top->next;
+	temp->next = dest->top;
+	dest->top = temp;
+	src->size--;
+	dest->size++;
 }
 // If no elements to push, returns ?
 // Remove top element from 'from' stack
