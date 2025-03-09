@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:32 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/02/17 18:05:45 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/03/09 21:23:59 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,61 +14,51 @@
 # define PUSH_SWAP_H
 # include "../libft/libft.h"
 # include <unistd.h>
-
-//STACK NODE STRUCT
-typedef struct s_node
-{
-	int				value;
-	struct s_node	*next;
-}	t_node;
+# include <stdio.h>
+# include <stdlib.h>
 
 //STACK STRUCT
 typedef struct s_stack
 {
-	t_node	*top;
-	int		size;
-}	t_stack;
-// *top: Pointer to the top of the stack
-// size: Number of elements in the stack
+    int             value;
+    struct s_stack  *next;
+} t_stack;
 
-//MAIN (push_swap.c)
-int		is_sorted(t_stack *stack);
-void	small_sort(t_stack *a, t_stack *b);
-void	radix_sort(t_stack *a, t_stack *b);
-
-//INITIALISATION (init_stack.c)
-t_stack	*init_stack(void);
-void	push_to_stack(t_stack *stack, int value);
-void	init_stack_a(t_stack *a, char **argv);
+//MAIN (radix_sort.c)
+int		get_max_bits(t_stack *stack);
+void	radix_sort(t_stack **a, t_stack **b);
+void	push_swap(t_stack **a, t_stack **b);
 
 //SMALL NUMBER SORT (mini_sort.c)
-void	sort_three(t_stack *a);
-void	sort_five(t_stack *a, t_stack *b);
+void	sort_two(t_stack **a);
+void	sort_three(t_stack **a);
 
-//PRE-SORT (pre_sort.c)
-void	pre_sort_to_b(t_stack *a, t_stack *b, int total_elements, int grp_size);
+//UTILS (sort_utils.c)
+t_stack	*create_node(int value);
+void	free_stack(t_stack *stack);
+int		stack_size(t_stack *stack);
 
 //***OPERATIONS***
 
 //PUSH (ops_push.c)
-void	push(t_stack *src, t_stack *dest);
-void	pa(t_stack *a, t_stack *b);
-void	pb(t_stack *a, t_stack *b);
+void	push(t_stack **dst, t_stack **src);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **a, t_stack **b);
 //SWAP (ops_swap.c)
-void	swap(t_stack *stack);
-void	sa(t_stack *a);
-void	sb(t_stack *b);
-void	ss(t_stack *a, t_stack *b);
+void	swap(t_stack **stack);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
 //ROTATE (ops_rotate.c)
-void	rotate(t_stack *stack);
-void	ra(t_stack *a);
-void	rb(t_stack *b);
-void	rr(t_stack *a, t_stack *b);
+void	rotate(t_stack **stack);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
 //REVERSE ROTATE (ops_reverse.c)
-void	reverse_rotate(t_stack *stack);
-void	rra(t_stack *a);
-void	rrb(t_stack *b);
-void	rrr(t_stack *a, t_stack *b);
+void	reverse_rotate(t_stack **stack);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
 
 #endif
 

@@ -1,37 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ops_push.c                                         :+:      :+:    :+:   */
+/*   ops_reverse_rotate.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/03/07 20:59:34 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/03/09 16:32:56 by bryaloo          ###   ########.fr       */
+/*   Created: 2025/03/07 20:59:23 by bryaloo           #+#    #+#             */
+/*   Updated: 2025/03/09 16:40:28 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	push(t_stack **dst, t_stack **src)
+void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
+	t_stack	*last;
 
-	if (!*src)
+	if (!*stack || !(*stack)->next)
 		return ;
-	tmp = *src;
-	*src = (*src)->next;
-	tmp->next = *dst;
-	*dst = tmp;
+	last = *stack;
+	while (last->next->next)
+		last = last->next;
+	tmp = last->next;
+	last->next = NULL;
+	tmp->next = *stack;
+	*stack = tmp;
 }
 
-void	pa(t_stack **a, t_stack **b)
+void	rra(t_stack **a)
 {
-	push(a, b);
-	ft_printf("pa\n");
+	reverse_rotate(a);
+	ft_printf("rra\n");
 }
 
-void	pb(t_stack **a, t_stack **b)
+void	rrb(t_stack **b)
 {
-	push(b, a);
-	ft_printf("pb\n");
+	reverse_rotate(b);
+	ft_printf("rrb\n");
+}
+
+void	rrr(t_stack **a, t_stack **b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	ft_printf("rrr\n");
 }
