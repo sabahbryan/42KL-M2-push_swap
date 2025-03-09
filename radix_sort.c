@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 20:59:14 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/03/09 21:28:18 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/03/09 22:54:21 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,16 +70,17 @@ void	push_swap(t_stack **a, t_stack **b)
 		radix_sort(a, b);
 }
 
-int	main(int argc, char **argv)
+int main(int argc, char **argv)
 {
     t_stack *a = NULL;
     t_stack *b = NULL;
     int i;
     int value;
+    t_stack *new_node;
 
     if (argc < 2)
     {
-        printf("Usage: %s <numbers>\n", argv[0]);
+        ft_printf("Usage: %s <numbers>\n", argv[0]);
         return (1);
     }
 
@@ -88,7 +89,14 @@ int	main(int argc, char **argv)
     while (i < argc)
     {
         value = ft_atoi(argv[i]);
-        push(&a, create_node(value));
+        new_node = create_node(value);
+        if (!new_node)
+        {
+            free_stack(a); // Free the stack if allocation fails
+            return (1);
+        }
+        new_node->next = a; // Add the new node to the top of the stack
+        a = new_node;       // Update the top of the stack
         i++;
     }
 
