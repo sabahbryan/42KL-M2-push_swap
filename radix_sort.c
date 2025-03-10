@@ -6,12 +6,21 @@
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 20:59:14 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/03/09 22:54:21 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/03/10 19:20:29 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+/**
+ * @brief
+ * @param stack
+ * @var max
+ * @var max_bits
+ * @return max_bits
+ * @note	1)
+ * @note	2)
+ */
 int	get_max_bits(t_stack *stack)
 {
 	int	max;
@@ -23,13 +32,25 @@ int	get_max_bits(t_stack *stack)
 	{
 		if (stack->value > max)
 			max = stack->value;
-	stack = stack->next;
+		stack = stack->next;
 	}
 	while (max >> max_bits)
 		max_bits++;
 	return (max_bits);
 }
 
+/**
+ * @brief
+ * @param a
+ * @param b
+ * @var max_bits
+ * @var size
+ * @var i
+ * @var j
+ * @return none
+ * @note	1)
+ * @note	2)
+ */
 void	radix_sort(t_stack **a, t_stack **b)
 {
 	int	max_bits;
@@ -57,6 +78,15 @@ void	radix_sort(t_stack **a, t_stack **b)
 	}
 }
 
+/**
+ * @brief
+ * @param a
+ * @param b
+ * @var size
+ * @return none
+ * @note	1)
+ * @note	2)
+ */
 void	push_swap(t_stack **a, t_stack **b)
 {
 	int	size;
@@ -70,42 +100,58 @@ void	push_swap(t_stack **a, t_stack **b)
 		radix_sort(a, b);
 }
 
-int main(int argc, char **argv)
+/**
+ * @brief
+ * @param argc
+ * @param argv
+ * @var a
+ * @var b
+ * @var new_node
+ * @var i
+ * @var value
+ * @return 1)
+ * @return 2)
+ * @return 3)
+ * @note	1)
+ * @note	2)
+ */
+int	main(int argc, char **argv)
 {
-    t_stack *a = NULL;
-    t_stack *b = NULL;
-    int i;
-    int value;
-    t_stack *new_node;
+	t_stack	*a;
+	t_stack	*b;
+	t_stack	*new_node;
+	int		i;
+	int		value;
 
-    if (argc < 2)
-    {
-        ft_printf("Usage: %s <numbers>\n", argv[0]);
-        return (1);
-    }
-
-    // Parse arguments and populate stack 'a'
-    i = 1;
-    while (i < argc)
-    {
-        value = ft_atoi(argv[i]);
-        new_node = create_node(value);
-        if (!new_node)
-        {
-            free_stack(a); // Free the stack if allocation fails
-            return (1);
-        }
-        new_node->next = a; // Add the new node to the top of the stack
-        a = new_node;       // Update the top of the stack
-        i++;
-    }
-
-    // Sort the stack
-    push_swap(&a, &b);
-
-    // Free stacks
-    free_stack(a);
-    free_stack(b);
-
-    return (0);
+	a = NULL;
+	b = NULL;
+	if (argc < 2)
+	{
+		ft_printf("Usage: ./push_swap <numbers>\n");
+		return (1);
+	}
+	i = 1;
+	while (i < argc)
+	{
+		value = ft_atoi(argv[i]);
+		new_node = create_node(value);
+		if (!new_node)
+		{
+			free_stack(a);
+			return (1);
+		}
+		new_node->next = a;
+		a = new_node;
+		i++;
+	}
+	push_swap(&a, &b);
+	free_stack(a);
+	free_stack(b);
+	return (0);
 }
+// Parse arguments and populate stack 'a'
+// Free the stack if allocation fails
+// Add the new node to the top of the stack
+// Update the top of the stack
+// Sort the stack
+// Free stacks

@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:32 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/03/09 21:23:59 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/03/10 18:20:03 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,9 @@
 //STACK STRUCT
 typedef struct s_stack
 {
-    int             value;
-    struct s_stack  *next;
-} t_stack;
+	int				value;
+	struct s_stack	*next;
+}	t_stack;
 
 //MAIN (radix_sort.c)
 int		get_max_bits(t_stack *stack);
