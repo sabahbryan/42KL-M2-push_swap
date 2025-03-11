@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 15:26:32 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/03/10 18:20:03 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/03/11 22:56:35 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-//MAIN (radix_sort.c)
+//MAIN (push_swap.c)
+void	push_swap(t_stack **a, t_stack **b);
+
+//RADIX (radix_sort.c)
 int		get_max_bits(t_stack *stack);
 void	radix_sort(t_stack **a, t_stack **b);
-void	push_swap(t_stack **a, t_stack **b);
 
 //SMALL NUMBER SORT (mini_sort.c)
 void	sort_two(t_stack **a);
