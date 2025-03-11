@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/07 19:41:21 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/03/10 23:32:24 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/03/11 23:21:21 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,37 +47,37 @@ void	sort_three(t_stack **a)
 	second = (*a)->next->value;
 	third = (*a)->next->next->value;
 
-	// if (first > second && second < third && first < third)
-	// 	sa(a);
-	// else if (first > second && second > third)
-	// {
-	// 	sa(a);
-	// 	rra(a);
-	// }
-	// else if (first > second && second < third && first > third)
-	// 	ra(a);
-	// else if (first < second && second > third && first < third)
-	// {
-	// 	sa(a);
-	// 	ra(a);
-	// }
-	// else if (first < second && second > third && first > third)
-	// 	rra(a);
+	if (first > second && second < third && first < third)
+		sa(a);
+	else if (first > second && second > third)
+	{
+		sa(a);
+		rra(a);
+	}
+	else if (first > second && second < third && first > third)
+		ra(a);
+	else if (first < second && second > third && first < third)
+	{
+		sa(a);
+		ra(a);
+	}
+	else if (first < second && second > third && first > third)
+		rra(a);
 
-	if (first < second && second > third && first > third)  
-		sa(a);  // Swap first and second
-	else if (first < second && second < third)  
-	{
-		sa(a);  // Swap first and second
-		rra(a); // Reverse rotate
-	}
-	else if (first < second && second > third && first < third)  
-		ra(a);  // Rotate up
-	else if (first > second && second < third && first > third)  
-	{
-		sa(a);  // Swap first and second
-		ra(a);  // Rotate up
-	}
-	else if (first > second && second < third && first < third)  
-		rra(a); // Reverse rotate
+// 	if (first < second && second > third && first > third)  
+// 		sa(a);  // Swap first and second
+// 	else if (first < second && second < third)  
+// 	{
+// 		sa(a);  // Swap first and second
+// 		rra(a); // Reverse rotate
+// 	}
+// 	else if (first < second && second > third && first < third)  
+// 		ra(a);  // Rotate up
+// 	else if (first > second && second < third && first > third)  
+// 	{
+// 		sa(a);  // Swap first and second
+// 		ra(a);  // Rotate up
+// 	}
+// 	else if (first > second && second < third && first < third)  
+// 		rra(a); // Reverse rotate
 }

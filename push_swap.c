@@ -6,7 +6,7 @@
 /*   By: bryaloo <bryaloo@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/03/11 22:55:24 by bryaloo           #+#    #+#             */
-/*   Updated: 2025/03/11 22:55:52 by bryaloo          ###   ########.fr       */
+/*   Updated: 2025/03/11 23:20:23 by bryaloo          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	main(int argc, char **argv)
 {
 	t_stack	*a;
 	t_stack	*b;
-	t_stack	*new_node;
+	//t_stack	*new_node;
 	int		i;
 	int		value;
 
@@ -68,17 +68,25 @@ int	main(int argc, char **argv)
 	while (i < argc)
 	{
 		value = ft_atoi(argv[i]);
-		new_node = create_node(value);
-		if (!new_node)
-		{
-			free_stack(a);
-			return (1);
-		}
-		new_node->next = a;
-		a = new_node;
+		//new_node = create_node(value);
+        append_node(&a, value); // Use append_node instead of front insertion
+		// if (!new_node)
+		// {
+		// 	free_stack(a);
+		// 	return (1);
+		// }
+		// new_node->next = a;
+		// a = new_node;
 		i++;
 	}
+    ft_printf("Initial stack:\n"); //debug
+	print_stack(a);
+    
 	push_swap(&a, &b);
+
+    ft_printf("Sorted stack:\n"); //debug
+	print_stack(a);
+
 	free_stack(a);
 	free_stack(b);
 	return (0);
@@ -89,3 +97,31 @@ int	main(int argc, char **argv)
 // Update the top of the stack
 // Sort the stack
 // Free stacks
+
+void	append_node(t_stack **stack, int value)
+{
+	t_stack *new_node = create_node(value);
+	t_stack *current;
+
+	if (!new_node)
+		return ;
+	if (!*stack) // If stack is empty, set new_node as the top
+	{
+		*stack = new_node;
+		return ;
+	}
+	current = *stack;
+	while (current->next) // Traverse to the last node
+		current = current->next;
+	current->next = new_node; // Append the new node
+}
+
+void	print_stack(t_stack *stack) //debugging
+{
+	while (stack)
+	{
+		ft_printf("%d -> ", stack->value);
+		stack = stack->next;
+	}
+	ft_printf("NULL\n");
+}
